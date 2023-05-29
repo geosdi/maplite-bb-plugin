@@ -193,7 +193,23 @@
             "key": "tileMultipleURL"
           }
           ]
-        }
+        },
+        {
+          "section": true,
+          "name": "WMS Layers",
+          "settings": [
+            {
+              "type": "text",
+              "label": "Base WMS URL",
+              "key": "wmsURL"
+            },
+            {
+              "type": "options",
+              "label": "Multiple WMS Layers",
+              "key": "wmsMultipleURL"
+            }
+            ]
+          }
       ]
     }
   }

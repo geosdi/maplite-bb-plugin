@@ -37,6 +37,7 @@
   export let customizationBoolean;
   export let iconType;
   export let tileMultipleURL;
+  export let wmsMultipleURL;
 
   const { styleable, notificationStore } = getContext("sdk");
   const component = getContext("component");
@@ -123,6 +124,7 @@
   let mapMasterMarkerGroup = new L.FeatureGroup();
 
   let mapTileLayers = new L.layerGroup();
+  let mapWMSLayers = new L.layerGroup();
 
   let candidateMarkerGroup = new L.FeatureGroup();
   let candidateMarkerPosition;
@@ -161,6 +163,7 @@
   );
 
   $: addMultipleTileLayers(mapInstance, tileMultipleURL);
+  $: addMultipleWMSLayers(mapInstance, wmsMultipleURL);
   $: updateLayerGroup(showLayerControlEnabled);
 
   const updateLayerGroup = (showLayerControlEnabled) => {
@@ -177,6 +180,19 @@
     }
     for (let i = 0; i < tileMultipleURL.length; i++) {
       mapTileLayers.addLayer(L.tileLayer(tileMultipleURL[i].value));
+    }
+  };
+
+  const addMultipleWMSLayers = (mapInstance, wmsMultipleURL) => {
+    mapWMSLayers.clearLayers();
+    if (!mapInstance) {
+      return;
+    }
+    if (!wmsMultipleURL) {
+      return;
+    }
+    for (let i = 0; i < wmsMultipleURL.length; i++) {
+      mapWMSLayers.addLayer(L.tileLayer.wms(wmsMultipleURL[i].key, {layers: wmsMultipleURL[i].value});
     }
   };
 
@@ -466,6 +482,7 @@
     );
 
     mapTileLayers.addTo(mapInstance);
+    mapWMSLayers.addTo(mapInstance);
 
     mapInstance.on("click", handleMapClick);
 
