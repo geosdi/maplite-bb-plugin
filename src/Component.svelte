@@ -192,7 +192,7 @@
       return;
     }
     for (let i = 0; i < wmsMultipleURL.length; i++) {
-      mapWMSLayers.addLayer(L.tileLayer.wms(wmsMultipleURL[i].key, {layers: wmsMultipleURL[i].value});
+      mapWMSLayers.addLayer(L.tileLayer.wms(wmsMultipleURL[i].key, {layers: wmsMultipleURL[i].value}));
     }
   };
 
