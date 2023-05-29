@@ -38,6 +38,7 @@
   export let iconType;
   export let tileMultipleURL;
   export let wmsMultipleURL;
+  export let wmsURL;
 
   const { styleable, notificationStore } = getContext("sdk");
   const component = getContext("component");
@@ -192,7 +193,7 @@
       return;
     }
     for (let i = 0; i < wmsMultipleURL.length; i++) {
-      mapWMSLayers.addLayer(L.tileLayer.wms(wmsMultipleURL[i].key, {layers: wmsMultipleURL[i].value}));
+      mapWMSLayers.addLayer(L.tileLayer.wms(wmsURL.value, {layers: wmsMultipleURL[i].value}));
     }
   };
 
