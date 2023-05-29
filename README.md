@@ -1,2 +1,2 @@
 # maplite-bb-plugin
-MapLite BudyBase Plugin
+MapLite BudiBase Plugin
