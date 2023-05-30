@@ -193,7 +193,7 @@
       return;
     }
     for (let i = 0; i < wmsMultipleURL.length; i++) {
-      mapWMSLayers.addLayer(L.tileLayer.wms(wmsURL, {layers: wmsMultipleURL[i].value, transparent: true}));
+      mapWMSLayers.addLayer(L.tileLayer.wms(wmsURL, {layers: wmsMultipleURL[i].value, transparent: true, format: 'image/png'}));
     }
   };
 
@@ -481,7 +481,7 @@
         zoom,
       })
     );
-    
+
     mapWMSLayers.addTo(mapInstance);
     mapTileLayers.addTo(mapInstance);
     
