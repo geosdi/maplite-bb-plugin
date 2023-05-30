@@ -195,7 +195,7 @@
     for (let i = 0; i < wmsMultipleURL.length; i++) {
       console.log(wmsURL.value);
       console.log(wmsMultipleURL[i].value);
-      mapWMSLayers.addLayer(L.tileLayer.wms(wmsURL.value, {layers: wmsMultipleURL[i].value}));
+      mapWMSLayers.addLayer(L.tileLayer.wms(wmsURL, {layers: wmsMultipleURL[i].value}));
     }
   };
 

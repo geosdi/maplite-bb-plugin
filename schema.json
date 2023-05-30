@@ -6,6 +6,7 @@
     "friendlyName": "Maplite Budibase Plugin",
     "description": "Maplite for budybase, a component which has the ability to add multiple layers (json and geo-platform project), marker and more",
     "icon": "MapView",
+    "author": "geoSDI CNR IMAA",
     "settings": [
       {
         "type": "dataProvider",
