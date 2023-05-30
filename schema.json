@@ -205,7 +205,7 @@
             },
             {
               "type": "options",
-              "label": "Multiple WMS Layers",
+              "label": "WMS Layers",
               "key": "wmsMultipleURL"
             }
             ]
